@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<section class="todoapp">
+    <header class="header ">
+        <h1> Todos</h1>
+        <div class="view">
+            <input class="new-todo"
+                   autocomplete="off"
+                   v-model="newItem"
+                   @keyup.enter="addTodo"
+                   placeholder="What needs to be done ?">
+        </div>
+    </header>
+<section class="main">
+ <div class="todo-list">
+     <div class="todo" v-for="todo in filterdtodos" >
+         <div class="view ">
+             <input class="toggle" type="checkbox" v-model="todo.completed">
+             <label  :class="{completed:todo.completed}">{{todo.title}}</label>
+             <button class="btn btn-danger delete" @click="deleteTodo(todo)">X</button>
+         </div>
+
+     </div>
+ </div>
+</section>
+    <footer class="footer">
+        <strong>{{numberofitem}} {{text}}</strong>
+        <a href="#" @click.prevent="visibility='all'"> All </a>
+        <a href="#" @click.prevent="visibility='active'">  Active  </a>
+        <a href="#" @click.prevent="visibility='completed'">  completed  </a>
+        <button class=" btn btn-primary" @click="removecombleted">Remove All Completed</button>
+    </footer>
+</section>
+<script src="vue.js"></script>
+<script src="code.js"></script>
+</body>
+</html>

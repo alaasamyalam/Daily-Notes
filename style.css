@@ -1,0 +1,29 @@
+
+.view{
+    background-color: #fcf8e3;
+    color: darkorchid;
+    margin:  auto;
+    font-size: 30px;
+    width: 600px;
+    border:1px solid gainsboro;
+}
+.header{
+    margin: auto;
+    text-align: center;
+}
+.footer{
+    margin: auto;
+    font-size: 30px;
+    text-align: center;
+}
+.new-todo{
+    width: inherit;
+}
+
+.completed{
+    text-decoration: line-through;
+    text-shadow:4px 4px 18px green;
+}
+.delete{
+    float: right;
+}
